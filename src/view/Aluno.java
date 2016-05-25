@@ -11,7 +11,7 @@ import javax.swing.border.EtchedBorder;
 
 import controller.ControllerAluno;
 import model.ConectaBanco;
-import model.ModelUsuario;
+import model.ModelAluno;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -226,7 +226,7 @@ public class Aluno extends JFrame {
 	private void salvarActionPerformed(ActionEvent evento) {
 		try {
 
-			ModelUsuario modeloUsuario = new ModelUsuario();
+			ModelAluno modeloUsuario = new ModelAluno();
 
 			int mat = Integer.parseInt(matricula.getText());
 			modeloUsuario.setMatricula(mat);

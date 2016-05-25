@@ -1,6 +1,6 @@
 package model;
 
-public class ModelUsuario {
+public class ModelAluno {
 	
 	private int matricula;
 	private String nome;

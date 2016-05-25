@@ -6,13 +6,13 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 import model.ConectaBanco;
-import model.ModelUsuario;
+import model.ModelAluno;
 
 public class ControllerAluno {
 	
 	ConectaBanco conecta = new ConectaBanco();
 	
-	public void inserirAluno(ModelUsuario modeloUsuario){
+	public void inserirAluno(ModelAluno modeloUsuario){
 		
 		conecta.conexao();
 		try {
