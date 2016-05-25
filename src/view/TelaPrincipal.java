@@ -19,50 +19,52 @@ import javax.swing.JPanel;
 public class TelaPrincipal extends JFrame implements ActionListener{
     
     TelaPrincipal(){
-        super("Layout Padrão");
+        super("Sistem Simuled Enade");
         
         Container principal = getContentPane();
         Container menu = new JPanel();
         Container conteudo = new JPanel();
-        
+    
         JMenuBar barraMenu = new JMenuBar();
         JMenu cadastro = new JMenu("Cadastro    ");
         JMenu Relatorios = new JMenu("Relatorios");
         
-        JMenuItem menuItemCliente = new JMenuItem("Curso");
-        JMenuItem menuItemFornecedor = new JMenuItem("Questões");
-        JMenuItem menuItemAssociados = new JMenuItem("Assunto");
+        JMenuItem menuItemAluno = new JMenuItem("  Aluno");
+        JMenuItem menuItemProva = new JMenuItem(" Prova");
+        JMenuItem menuItemQuestoes = new JMenuItem("Questões");
         
         barraMenu.add(cadastro);
-        cadastro.add(menuItemCliente);
-        cadastro.add(menuItemFornecedor);
-        cadastro.add(menuItemAssociados);
+        cadastro.add(menuItemAluno);
+        cadastro.add(menuItemProva);
+        cadastro.add(menuItemQuestoes);
         
-        menuItemCliente.addActionListener(new ActionListener() {
+        menuItemAluno.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evento) {
-                clienteActionPerformed(evento);
+                alunoActionPerformed(evento);
             }
         });
         
         barraMenu.add(Relatorios);
         
+    
         
         
         conteudo.setLayout(new GridLayout(1,1));
     
-        principal.add(BorderLayout.NORTH, barraMenu);
+       principal.add(BorderLayout.NORTH, barraMenu);
         principal.add(BorderLayout.CENTER,conteudo);
         
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setExtendedState(MAXIMIZED_BOTH);
         setSize(1366, 768);
         setLocationRelativeTo(null);
         setVisible(true);
     }
     
-    private void clienteActionPerformed(ActionEvent evento){
-       
+    private void alunoActionPerformed(ActionEvent evento){
+       //new CadastroAluno();
     }
 
     
