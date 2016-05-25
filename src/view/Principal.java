@@ -134,6 +134,7 @@ public class Principal extends JFrame {
 	private void campusActionPerformed(ActionEvent evento) {
 			Campus cadastroCampus = new Campus();
 			cadastroCampus.setVisible(true);
+			
 	}
 	
 	private void areaCursoActionPerformed(ActionEvent evento) {

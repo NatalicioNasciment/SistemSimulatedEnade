@@ -25,6 +25,15 @@ public class Campus extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField nomeCampus;
+	JButton adicionar = new JButton("");
+	JButton salvar = new JButton("");
+	JButton editar = new JButton("");
+	JButton remover = new JButton("");
+	JButton primeiro = new JButton("");
+	JButton anterior = new JButton("");
+	JButton proximo = new JButton("");
+	JButton ultimo = new JButton("");
+	JButton sair = new JButton("");
 
 	/**
 	 * Launch the application.
@@ -46,6 +55,13 @@ public class Campus extends JFrame {
 	 * Create the frame.
 	 */
 	public Campus() {
+		carregarComponentes();
+		//nomeCampus.setEditable(false);
+		
+	}
+	
+	private void carregarComponentes(){
+		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 590, 298);
 		setSize(674, 300);
@@ -68,6 +84,12 @@ public class Campus extends JFrame {
 		panel.add(campus);
 		
 		nomeCampus = new JTextField();
+		nomeCampus.setEnabled(false);
+		nomeCampus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent evento) {
+				nomeActionPerformed(evento);
+			}
+		});
 		nomeCampus.setBounds(99, 11, 528, 20);
 		panel.add(nomeCampus);
 		nomeCampus.setColumns(10);
@@ -85,19 +107,18 @@ public class Campus extends JFrame {
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
-		JButton adicionar = new JButton("");
+		
 		adicionar.setIcon(new ImageIcon(Curso.class.getResource("/imagens/page_add.png")));
 		adicionar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evento) {
 				adicionarActionPerformed(evento);
-			}
-
-			
+			}	
 		});
 		adicionar.setBounds(10, 11, 54, 34);
 		panel_1.add(adicionar);
 		
-		JButton salvar = new JButton("");
+		
+		salvar.setEnabled(false);
 		salvar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evento) {
 				salvarActionPerformed(evento);
@@ -110,7 +131,8 @@ public class Campus extends JFrame {
 		salvar.setBounds(74, 11, 54, 34);
 		panel_1.add(salvar);
 		
-		JButton editar = new JButton("");
+	
+		editar.setEnabled(false);
 		editar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evento) {
 				editarActionPerformed(evento);
@@ -122,7 +144,8 @@ public class Campus extends JFrame {
 		editar.setBounds(138, 11, 54, 34);
 		panel_1.add(editar);
 		
-		JButton remover = new JButton("");
+		
+		remover.setEnabled(false);
 		remover.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evento) {
 				removerActionPerformed(evento);
@@ -133,8 +156,6 @@ public class Campus extends JFrame {
 		remover.setIcon(new ImageIcon(Curso.class.getResource("/imagens/page_remove.png")));
 		remover.setBounds(202, 11, 54, 34);
 		panel_1.add(remover);
-		
-		JButton primeiro = new JButton("");
 		primeiro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evento) {
 				primeiroActionPerformed(evento);
@@ -145,8 +166,6 @@ public class Campus extends JFrame {
 		primeiro.setIcon(new ImageIcon(Curso.class.getResource("/imagens/primeiro.png")));
 		primeiro.setBounds(295, 11, 54, 34);
 		panel_1.add(primeiro);
-		
-		JButton anterior = new JButton("");
 		anterior.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evento) {
 				anteriorActionPerformed(evento);
@@ -157,8 +176,6 @@ public class Campus extends JFrame {
 		anterior.setIcon(new ImageIcon(Curso.class.getResource("/imagens/anterior.png")));
 		anterior.setBounds(359, 11, 54, 34);
 		panel_1.add(anterior);
-		
-		JButton proximo = new JButton("");
 		proximo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evento) {
 				proximoActionPerformed(evento);
@@ -169,8 +186,6 @@ public class Campus extends JFrame {
 		proximo.setIcon(new ImageIcon(Curso.class.getResource("/imagens/proximo.png")));
 		proximo.setBounds(423, 11, 54, 34);
 		panel_1.add(proximo);
-		
-		JButton ultimo = new JButton("");
 		ultimo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evento) {
 				ultimoActionPerformed(evento);
@@ -182,7 +197,7 @@ public class Campus extends JFrame {
 		ultimo.setBounds(487, 11, 54, 34);
 		panel_1.add(ultimo);
 		
-		JButton sair = new JButton("");
+		
 		sair.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evento) {
 				sairActionPerformed(evento);
@@ -195,23 +210,40 @@ public class Campus extends JFrame {
 		panel_1.add(sair);
 	}
 	
+	private void nomeActionPerformed(ActionEvent evento) {
+	}
 	private void adicionarActionPerformed(ActionEvent evento) {
-		// TODO Auto-generated method stub
+		adicionar.setEnabled(false);
+		nomeCampus.setEnabled(true);
+		salvar.setEnabled(true);
+		editar.setEnabled(true);
+		remover.setEnabled(true);
+		
+		
+		
+		
 		
 	}
 	
 	private void salvarActionPerformed(ActionEvent evento) {
+		adicionar.setEnabled(true);
+		salvar.setEnabled(false);
+		editar.setEnabled(false);
+		remover.setEnabled(false);
+		
+		nomeCampus.setEnabled(false);
+		nomeCampus.setText("");
 		
 		ModelCampus modeloCampus = new ModelCampus();
 		modeloCampus.setNomeCampus(nomeCampus.getText());
 		
 		ControllerCampus controleCampus = new ControllerCampus();
 		controleCampus.inserirCampus(modeloCampus);
-		
+			
 	}
 	
 	private void editarActionPerformed(ActionEvent evento) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 	
