@@ -59,7 +59,7 @@ public class Principal extends JFrame {
 		area_curso.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evento) {
 				areaCursoActionPerformed(evento);
-			}
+			} 
 
 			
 		});

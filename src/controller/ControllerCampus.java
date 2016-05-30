@@ -15,7 +15,7 @@ public class ControllerCampus {
 		try {
 			conecta.conexao();
 			
-			PreparedStatement pst = conecta.conn.prepareStatement("INSERT INTO campus(campus) VALUES(?)");
+			PreparedStatement pst = conecta.conn.prepareStatement("INSERT INTO campus (campus) VALUES(?)");
 			
 			pst.setString(1, modeloCampus.getNomeCampus());
 			pst.executeUpdate();
